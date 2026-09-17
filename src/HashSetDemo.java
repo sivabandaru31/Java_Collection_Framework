@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.Objects;
 
 
 class Customer{
@@ -9,6 +10,19 @@ class Customer{
         this.id=id;
         this.name=name;
     }
+    @Override
+    public int hashCode(){
+        return Objects.hash(name,id);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(this==obj) return true;
+        if(!(obj instanceof Customer)) return false;
+        Customer that=(Customer) obj;
+        return this.name.equals(that.name) && that.id==that.id;
+    }
+
     @Override
     public String toString(){
         return name+" - "+id;
@@ -22,6 +36,8 @@ public class HashSetDemo {
         Customer c2=new Customer("Noushine",2);
         Customer c3=new Customer("Divay",3);
         Customer c4=new Customer("Amulya",1);
+        String str="Amulya";
+        System.out.println(c1.equals(c4));
         set.add(c1);
         set.add(c2);
         set.add(c3);
