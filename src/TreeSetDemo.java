@@ -1,4 +1,6 @@
 import java.util.Comparator;
+import java.util.NavigableSet;
+import java.util.SortedSet;
 import java.util.TreeSet;
 
 
@@ -40,14 +42,41 @@ public class TreeSetDemo {
 //        System.out.println(set);
 
 
-        Comparator<Book> byTitle=(b1,b2)->b1.name.compareTo(b2.name);
-        TreeSet<Book> set=new TreeSet<>(byTitle);
-        Book b1=new Book("java",2,"jamsgoslin");
-        Book b2=new Book("python",1,"Guido van Rossum");
-        Book b3=new Book("python",1,"Guido van Rossum");
-        set.add(b1);
-        set.add(b2);
-        set.add(b3);
-        System.out.println(set);
+//        Comparator<Book> byTitle=(b1,b2)->b1.name.compareTo(b2.name);
+//        TreeSet<Book> set=new TreeSet<>(byTitle);
+//        Book b1=new Book("java",2,"jamsgoslin");
+//        Book b2=new Book("python",1,"Guido van Rossum");
+//        Book b3=new Book("python",1,"Guido van Rossum");
+//        set.add(b1);
+//        set.add(b2);
+//        set.add(b3);
+//        System.out.println(set);
+
+        //implementing TreeSET Methods
+        NavigableSet<Integer> set=new TreeSet<>();
+        set.add(23);
+        set.add(5);
+        set.add(89);
+        set.add(25);
+        set.add(45);
+        set.add(50);
+//        System.out.println(set);
+//        System.out.println(set.ceiling(23));
+//        System.out.println(set.floor(23));
+//        System.out.println(set.lower(23));
+//        System.out.println(set.higher(23));
+//        System.out.println(set.pollFirst());
+//        System.out.println(set.pollLast());
+//        SortedSet<Integer> sortedset=set.subSet(23,50);
+//        sortedset.add(30);
+//        System.out.println(sortedset);
+//        System.out.println(set);
+//        SortedSet<Integer> sortedHeadset=set.headSet(25);
+//        System.out.println(sortedHeadset);
+//        SortedSet<Integer> sortedTailset=set.tailSet(25);
+//        System.out.println(sortedTailset);
+        NavigableSet<Integer> navigableHeadset =set.headSet(25,true);
+        System.out.println(navigableHeadset);
+
     }
 }
